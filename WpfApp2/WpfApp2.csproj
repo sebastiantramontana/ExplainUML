@@ -1,0 +1,19 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net7.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Web.WebView2" Version="1.0.1823.32" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ExplainUml.BuildingBlocks\ExplainUml.BuildingBlocks.csproj" />
+    <ProjectReference Include="..\ExplainUml.Shapes\ExplainUml.Shapes.csproj" />
+  </ItemGroup>
+
+</Project>
