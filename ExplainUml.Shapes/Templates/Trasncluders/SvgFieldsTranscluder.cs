@@ -83,7 +83,7 @@ namespace ExplainUml.Shapes.Templates.Trasncluders
         }
 
         private int GetFieldBlockStartIndex(string templateContent)
-            => templateContent.IndexOf(BeginFieldBlockMark, StringComparison.InvariantCulture) + BeginFieldBlockMark.Length;
+            => templateContent.IndexOf(BeginFieldBlockMark, StringComparison.InvariantCulture);
 
         private int GetFieldBlockEndIndex(string templateContent)
             => templateContent.IndexOf(EndFieldBlockMark, StringComparison.InvariantCulture) + EndFieldBlockMark.Length;

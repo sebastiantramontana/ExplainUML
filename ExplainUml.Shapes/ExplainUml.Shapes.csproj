@@ -18,6 +18,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\ExplainUml.BuildingBlocks\ExplainUml.BuildingBlocks.csproj" />
+    <ProjectReference Include="..\ExplainUml.Infrastructure\ExplainUml.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>

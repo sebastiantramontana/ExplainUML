@@ -1,25 +1,10 @@
-﻿using Microsoft.Extensions.DependencyInjection;
-
-namespace ExplainUml.Infrastructure
+﻿namespace ExplainUml.Infrastructure
 {
-    internal class Container : IContainer
+    public static class Container
     {
-        public Container()
-        {
-            ServiceProvider serviceProvider
-            IServiceCollection services = new ServiceCollection();
-
-            //Microsoft.Extensions.DependencyInjection
-        }
-
-        public void RegisterSingleton<TInterface, TImplementation>() where TImplementation : class, TInterface
-        {
-            throw new NotImplementedException();
-        }
-
-        public void RegisterTransient<TInterface, TImplementation>() where TImplementation : class, TInterface
-        {
-            throw new NotImplementedException();
-        }
+        public static IRegistrar CreateRegistrar()
+            => new Registrar();
+        public static IServiceProvider CreateServiceProvider(IRegistrar registrar)
+            => new ServiceProvider(registrar);
     }
 }

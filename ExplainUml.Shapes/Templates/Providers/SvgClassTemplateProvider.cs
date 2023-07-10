@@ -5,12 +5,12 @@ namespace ExplainUml.Shapes.Templates.Providers
 {
     internal class SvgClassTemplateProvider : ISvgClassTemplateProvider
     {
-        private const string FileName = "Class.svg";
+        private const string FileName = "ExplainUml.Shapes.Templates.Files.Class.svg";
 
         public async Task<string> GetTemplateContent()
         {
-            var file = Assembly.GetExecutingAssembly().GetFile(FileName) ?? throw new FileNotFoundException(FileName);
-            var bytes = new byte[file.Length];
+            var file = Assembly.GetAssembly(typeof(SvgClassTemplateProvider))!.GetManifestResourceStream(FileName) ?? throw new FileNotFoundException(FileName);
+            var bytes = new byte[file!.Length];
 
             await file.ReadAsync(bytes);
 

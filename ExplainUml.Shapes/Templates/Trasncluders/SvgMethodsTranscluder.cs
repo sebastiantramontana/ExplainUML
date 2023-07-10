@@ -53,7 +53,7 @@ namespace ExplainUml.Shapes.Templates.Trasncluders
         }
 
         private int GetMethoddBlockStartIndex(string templateContent)
-            => templateContent.IndexOf(BeginMethodBlockMark, StringComparison.InvariantCulture) + BeginMethodBlockMark.Length;
+            => templateContent.IndexOf(BeginMethodBlockMark, StringComparison.InvariantCulture);
 
         private int GetMethodBlockEndIndex(string templateContent)
             => templateContent.IndexOf(EndMethodBlockMark, StringComparison.InvariantCulture) + EndMethodBlockMark.Length;
