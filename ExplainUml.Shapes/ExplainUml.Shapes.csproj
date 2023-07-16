@@ -7,16 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Templates\Files\Class.svg" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <EmbeddedResource Include="Templates\Files\Class.svg">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\ExplainUml.BuildingBlocks\ExplainUml.BuildingBlocks.csproj" />
     <ProjectReference Include="..\ExplainUml.Infrastructure\ExplainUml.Infrastructure.csproj" />
   </ItemGroup>

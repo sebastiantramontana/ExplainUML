@@ -14,7 +14,7 @@ namespace ExplainUml.Shapes.IoC
         {
             return registrar
                  .RegisterSingleton<ISvgShapeService<Class>, ClassSvgShapeService>()
-                 .RegisterSingleton<ISvgClassTemplateProvider, SvgClassTemplateProvider>()
+                 .RegisterSingleton<ISvgClassTemplateProvider, SvgClassPieceProvider>()
                  .RegisterSingleton<ISvgClassTrasncluder, SvgClassTrasncluder>()
                  .RegisterSingleton<ISvgFieldsTranscluder, SvgFieldsTranscluder>()
                  .RegisterSingleton<ISvgMethodsTranscluder, SvgMethodsTranscluder>()
