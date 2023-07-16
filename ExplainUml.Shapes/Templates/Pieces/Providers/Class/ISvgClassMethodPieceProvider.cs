@@ -1,6 +1,4 @@
-﻿using ExplainUml.Shapes.Templates.Pieces.Providers;
-
-namespace ExplainUml.Shapes.Templates.Pieces.Providers.Class
+﻿namespace ExplainUml.Shapes.Templates.Pieces.Providers.Class
 {
     internal interface ISvgClassMethodPieceProvider : IPieceProvider
     {

@@ -3,7 +3,7 @@
     internal class SvgClassDrawingPiecetProvider : PieceProviderBase, ISvgClassDrawingPieceProvider
     {
         public SvgClassDrawingPiecetProvider()
-            : base("ExplainUml.Shapes.Templates.Files.Class.SvgClassHeight.piece")
+            : base(Path.Combine(SvgClassPiecesPath.Path, "SvgClassDrawing.piece"))
         {
         }
     }

@@ -14,7 +14,7 @@ namespace ExplainUml.Shapes.Templates.Pieces.Providers
 
         public async Task<string> GetPieceContent()
         {
-            var file = Assembly.GetAssembly(typeof(SvgClassPieceProvider))!.GetManifestResourceStream(FileName) ?? throw new FileNotFoundException(FileName);
+            var file = Assembly.GetAssembly(typeof(PieceProviderBase))!.GetManifestResourceStream(_fileName) ?? throw new FileNotFoundException(FileName);
             var bytes = new byte[file!.Length];
 
             await file.ReadAsync(bytes);

@@ -1,11 +1,9 @@
-﻿using ExplainUml.Shapes.Templates.Pieces.Providers;
-
-namespace ExplainUml.Shapes.Templates.Pieces.Providers.Class
+﻿namespace ExplainUml.Shapes.Templates.Pieces.Providers.Class
 {
     internal class SvgClassNamePieceProvider : PieceProviderBase, ISvgClassNamePieceProvider
     {
         public SvgClassNamePieceProvider()
-            : base("ExplainUml.Shapes.Templates.Files.Class.SvgClassName.piece")
+            : base(Path.Combine(SvgClassPiecesPath.Path, "SvgClassName.piece"))
         {
         }
     }
