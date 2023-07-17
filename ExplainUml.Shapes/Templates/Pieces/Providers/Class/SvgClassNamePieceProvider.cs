@@ -2,8 +2,10 @@
 {
     internal class SvgClassNamePieceProvider : PieceProviderBase, ISvgClassNamePieceProvider
     {
-        public SvgClassNamePieceProvider()
-            : base(Path.Combine(SvgClassPiecesPath.Path, "SvgClassName.piece"))
+        private const string PIECE_FILE = "SvgClassName.piece";
+
+        public SvgClassNamePieceProvider(IPieceReader pieceReader)
+            : base(pieceReader, Path.Combine(SvgClassPiecesPath.Path, PIECE_FILE))
         {
         }
     }
