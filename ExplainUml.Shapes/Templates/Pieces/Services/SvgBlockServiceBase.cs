@@ -3,16 +3,16 @@ using System.Text;
 
 namespace ExplainUml.Shapes.Templates.Pieces.Services
 {
-    internal class SvgBlockService : ISvgBlockService
+    internal abstract class SvgBlockServiceBase
     {
         private readonly ISvgBlockSubstituter _svgBlockSubstituter;
 
-        public SvgBlockService(ISvgBlockSubstituter svgBlockSubstituter)
+        protected SvgBlockServiceBase(ISvgBlockSubstituter svgBlockSubstituter)
         {
             _svgBlockSubstituter = svgBlockSubstituter;
         }
 
-        public string GetBlocksContent(IEnumerable<string> blockTexts, int initialFieldPositionY, int initialFieldPaddingTop, string pieceContent)
+        protected string GetBlocksContent(IEnumerable<string> blockTexts, int initialFieldPositionY, int initialFieldPaddingTop, string pieceContent)
         {
             var fieldPositionY = initialFieldPositionY;
             var fieldPaddingTop = initialFieldPaddingTop;

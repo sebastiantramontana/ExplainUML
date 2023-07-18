@@ -1,24 +1,24 @@
 ﻿using ExplainUml.BuildingBlocks;
 using ExplainUml.BuildingBlocks.Properties;
 using ExplainUml.Shapes.Templates.Pieces.Providers.Class;
+using ExplainUml.Shapes.Templates.Pieces.Substitution;
 using ExplainUml.Shapes.Templates.Trasncluders.Formatters;
 
 namespace ExplainUml.Shapes.Templates.Pieces.Services
 {
-    internal class SvgClassFieldsService : ISvgClassFieldsService
+    internal class SvgClassFieldsService : SvgBlockServiceBase, ISvgClassFieldsService
     {
         private const int InitialPositionY = 45;
         private const int InitialPaddingTop = 33;
 
         private readonly ISvgClassFieldPieceProvider _svgClassFieldPieceProvider;
-        private readonly ISvgBlockService _svgBlockService;
         private readonly IEventFormatter _eventFormatter;
         private readonly IPropertyFormatter _propertyFormatter;
 
-        public SvgClassFieldsService(ISvgClassFieldPieceProvider svgClassFieldPieceProvider, ISvgBlockService svgBlockService, IEventFormatter eventFormatter, IPropertyFormatter propertyFormatter)
+        public SvgClassFieldsService(ISvgClassFieldPieceProvider svgClassFieldPieceProvider, ISvgClassFieldSubstituter svgClassFieldSubstituter, IEventFormatter eventFormatter, IPropertyFormatter propertyFormatter)
+            : base(svgClassFieldSubstituter)
         {
             _svgClassFieldPieceProvider = svgClassFieldPieceProvider;
-            _svgBlockService = svgBlockService;
             _eventFormatter = eventFormatter;
             _propertyFormatter = propertyFormatter;
         }
@@ -31,7 +31,7 @@ namespace ExplainUml.Shapes.Templates.Pieces.Services
             fields.AddRange(FormatEvents(events));
             fields.AddRange(FormatProperties(properties));
 
-            return _svgBlockService.GetBlocksContent(fields, InitialPositionY, InitialPaddingTop, pieceContent));
+            return GetBlocksContent(fields, InitialPositionY, InitialPaddingTop, pieceContent));
         }
 
         private IEnumerable<string> FormatEvents(IEnumerable<Event> events)
