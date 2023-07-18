@@ -17,7 +17,7 @@ namespace ExplainUml.Shapes.Templates.Pieces.Services
             _methodFormatter = methodFormatter;
         }
 
-        public async Task<string> GetFieldsContent(IEnumerable<Method> methods, int initialPositionY, int initialPaddingTop)
+        public async Task<string> GetMethodsContent(IEnumerable<Method> methods, int initialPositionY, int initialPaddingTop)
         {
             var pieceContent = await _svgClassMethodPieceProvider.GetPieceContent();
 
