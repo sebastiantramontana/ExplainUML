@@ -3,7 +3,7 @@ using ExplainUml.Shapes.Templates.Pieces.Substitution;
 
 namespace ExplainUml.Shapes.Templates.Pieces.Services
 {
-    internal class SvgClassNameService : SvgBlockServiceBase
+    internal class SvgClassNameService : SvgBlockServiceBase, ISvgClassNameService
     {
         private readonly ISvgClassNamePieceProvider _svgClassNamePieceProvider;
 

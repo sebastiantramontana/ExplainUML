@@ -1,28 +1,35 @@
 ﻿using ExplainUml.BuildingBlocks;
+using ExplainUml.Shapes.Templates.Pieces.Services;
 
 namespace ExplainUml.Shapes.Templates.Trasncluders
 {
     internal class SvgClassTrasncluder : ISvgClassTrasncluder
     {
-        private const string ClassNameSubstitution = "{{classname}}";
+        private readonly ISvgClassBeginService _beginService;
+        private readonly ISvgClassNameService _classNameService;
+        private readonly ISvgClassFieldsService _fieldsService;
+        private readonly ISvgClassSeparatorService _separatorService;
+        private readonly ISvgClassMethodsService _methodsService;
+        private readonly ISvgClassEndService _endService;
 
-        private readonly ISvgFieldsTranscluder _svgFieldsTranscluder;
-        private readonly ISvgMethodsTranscluder _svgMethodsTranscluder;
-
-        public SvgClassTrasncluder(ISvgFieldsTranscluder svgFieldsTranscluder, ISvgMethodsTranscluder svgMethodsTranscluder)
+        public SvgClassTrasncluder(ISvgClassBeginService beginService,
+                                   ISvgClassNameService classNameService,
+                                   ISvgClassFieldsService fieldsService,
+                                   ISvgClassSeparatorService separatorService,
+                                   ISvgClassMethodsService methodsService,
+                                   ISvgClassEndService endService)
         {
-            _svgFieldsTranscluder = svgFieldsTranscluder;
-            _svgMethodsTranscluder = svgMethodsTranscluder;
+            _beginService = beginService;
+            _classNameService = classNameService;
+            _fieldsService = fieldsService;
+            _separatorService = separatorService;
+            _methodsService = methodsService;
+            _endService = endService;
         }
 
-        public string Transclude(Class @class, string templateContent)
+        public Task<string> Transclude(Class @class)
         {
-            var newContent = ReplaceClassName(@class, templateContent);
-            newContent = _svgFieldsTranscluder.Transclude(@class.Properties, @class.Events, newContent);
-            return _svgMethodsTranscluder.Tranclude(@class.Methods, newContent);
-        }
 
-        private string ReplaceClassName(Class @class, string templateContent)
-            => templateContent.Replace(ClassNameSubstitution, @class.Name, StringComparison.InvariantCulture);
+        }
     }
 }

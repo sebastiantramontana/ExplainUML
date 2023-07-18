@@ -18,9 +18,9 @@ namespace ExplainUml.Shapes.Templates.Pieces.Substitution
         public string Substitute(string blockText, int fieldPositionY, int fieldPaddingTop, string fieldBlockContentTemplate)
         {
             return fieldBlockContentTemplate
-                .Replace(_blockTextTemplate, blockText)
-                .Replace(_blockPositionYTemplate, fieldPositionY.ToString())
-                .Replace(_blockPaddingTopTemplate, fieldPaddingTop.ToString());
+                .Replace(_blockTextTemplate, blockText, StringComparison.InvariantCulture)
+                .Replace(_blockPositionYTemplate, fieldPositionY.ToString(), StringComparison.InvariantCulture)
+                .Replace(_blockPaddingTopTemplate, fieldPaddingTop.ToString(), StringComparison.InvariantCulture);
         }
     }
 }
