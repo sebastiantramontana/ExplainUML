@@ -13,10 +13,10 @@ namespace ExplainUml.Shapes.Templates.Pieces.Services
             _svgClassNamePieceProvider = svgClassNamePieceProvider;
         }
 
-        public async Task<string> GetContent(string className, int initialPositionY, int initialPaddingTop)
+        public async Task<string> GetClassNameContent(string className, int initialPositionY, int initialPaddingTop)
         {
             var pieceContent = await _svgClassNamePieceProvider.GetPieceContent();
-            return GetBlocksContent(new[] { className }, initialPositionY, initialPaddingTop, pieceContent));
+            return GetBlocksContent(new[] { className }, initialPositionY, initialPaddingTop, pieceContent);
         }
     }
 }

@@ -1,7 +1,6 @@
 ﻿using ExplainUml.BuildingBlocks;
 using ExplainUml.Shapes.Templates.Pieces.Providers.Class;
 using ExplainUml.Shapes.Templates.Pieces.Substitution;
-using System.Security.Claims;
 
 namespace ExplainUml.Shapes.Templates.Pieces.Services
 {

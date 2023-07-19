@@ -8,9 +8,6 @@ namespace ExplainUml.Shapes.Templates.Pieces.Services
 {
     internal class SvgClassFieldsService : SvgBlockServiceBase, ISvgClassFieldsService
     {
-        private const int InitialPositionY = 45;
-        private const int InitialPaddingTop = 33;
-
         private readonly ISvgClassFieldPieceProvider _svgClassFieldPieceProvider;
         private readonly IEventFormatter _eventFormatter;
         private readonly IPropertyFormatter _propertyFormatter;
@@ -23,7 +20,7 @@ namespace ExplainUml.Shapes.Templates.Pieces.Services
             _propertyFormatter = propertyFormatter;
         }
 
-        public async Task<string> GetFieldsContent(IEnumerable<Event> events, IEnumerable<Property> properties)
+        public async Task<string> GetFieldsContent(IEnumerable<Event> events, IEnumerable<Property> properties, int initialPositionY, int initialPaddingTop)
         {
             var pieceContent = await _svgClassFieldPieceProvider.GetPieceContent();
 
@@ -31,7 +28,7 @@ namespace ExplainUml.Shapes.Templates.Pieces.Services
             fields.AddRange(FormatEvents(events));
             fields.AddRange(FormatProperties(properties));
 
-            return GetBlocksContent(fields, InitialPositionY, InitialPaddingTop, pieceContent));
+            return GetBlocksContent(fields, initialPositionY, initialPaddingTop, pieceContent);
         }
 
         private IEnumerable<string> FormatEvents(IEnumerable<Event> events)

@@ -22,7 +22,7 @@ namespace ExplainUml.Shapes.Templates.Pieces.Services
             var pieceContent = await _svgClassMethodPieceProvider.GetPieceContent();
 
             var formattedMethods = FormatMethods(methods);
-            return GetBlocksContent(formattedMethods, initialPositionY, initialPaddingTop, pieceContent));
+            return GetBlocksContent(formattedMethods, initialPositionY, initialPaddingTop, pieceContent);
         }
 
         private IEnumerable<string> FormatMethods(IEnumerable<Method> methods)

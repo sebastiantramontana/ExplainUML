@@ -2,6 +2,6 @@
 {
     internal interface ISvgClassNameService
     {
-        Task<string> GetContent(string className, int initialPositionY, int initialPaddingTop);
+        Task<string> GetClassNameContent(string className, int initialPositionY, int initialPaddingTop);
     }
 }
