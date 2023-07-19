@@ -1,5 +1,4 @@
-﻿using ExplainUml.BuildingBlocks;
-using ExplainUml.Shapes.Templates.Pieces.Providers.Class;
+﻿using ExplainUml.Shapes.Templates.Pieces.Providers.Class;
 using ExplainUml.Shapes.Templates.Pieces.Substitution;
 
 namespace ExplainUml.Shapes.Templates.Pieces.Services
@@ -15,19 +14,10 @@ namespace ExplainUml.Shapes.Templates.Pieces.Services
             _svgClassDrawingSubstituter = svgClassDrawingSubstituter;
         }
 
-        public async Task<string> GetDrawingContent(Class @class)
+        public async Task<string> GetDrawingContent(int classHeight, int blockHeight)
         {
             var pieceContent = await _svgClassDrawingPieceProvider.GetPieceContent();
-
-            var blockCount = CountBlocks(@class);
-            var classHeight = CalculateClassHeight(blockCount);
-
-            return _svgClassDrawingSubstituter.Substitute(SvgClassInfo.BlockHeight, classHeight, pieceContent);
+            return _svgClassDrawingSubstituter.Substitute(blockHeight, classHeight, pieceContent);
         }
-        private int CountBlocks(Class @class)
-            => @class.Events.Count() + @class.Properties.Count() + @class.Methods.Count() + 1;
-
-        private int CalculateClassHeight(int blockCount)
-            => SvgClassInfo.BlockHeight * blockCount + SvgClassInfo.DivisionSeparatorHeight;
     }
 }

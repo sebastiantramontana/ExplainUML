@@ -43,9 +43,11 @@ namespace ExplainUml.Shapes.Templates.Trasncluders
         {
             var stringBuilder = new StringBuilder();
             var methodsPositionY = CalculateMethodsPositionY(@class);
+            var blockCount = CountBlocks(@class);
+            var classHeight = CalculateClassHeight(blockCount);
 
-            stringBuilder.AppendLine(await _beginService.GetBeginContent());
-            stringBuilder.AppendLine(await _drawingPieceService.GetDrawingContent(@class));
+            stringBuilder.AppendLine(await _beginService.GetBeginContent(classHeight));
+            stringBuilder.AppendLine(await _drawingPieceService.GetDrawingContent(classHeight, SvgClassInfo.BlockHeight));
             stringBuilder.AppendLine(await _classNameService.GetClassNameContent(@class.Name, ClassNameInitialPositionY, ClassNameInitialPaddingTop));
             stringBuilder.AppendLine(await _fieldsService.GetFieldsContent(@class.Events, @class.Properties, FieldsInitialPositionY, FieldsInitialPaddingTop));
             stringBuilder.AppendLine(await _separatorService.GetSeparatorContent(CalculateSeparatorPositionY(methodsPositionY)));
@@ -55,15 +57,20 @@ namespace ExplainUml.Shapes.Templates.Trasncluders
             return stringBuilder.ToString();
         }
 
+        private int CountBlocks(Class @class)
+            => @class.Events.Count() + @class.Properties.Count() + @class.Methods.Count() + 1;
+
+        private int CalculateClassHeight(int blockCount)
+            => SvgClassInfo.BlockHeight * blockCount + SvgClassInfo.DivisionSeparatorHeight;
+
         private int CalculateSeparatorPositionY(int methodPositionY)
-        {
-            return methodPositionY - SvgClassInfo.DivisionSeparatorHeight / 2;
-        }
+            => methodPositionY - SvgClassInfo.DivisionSeparatorHeight / 2;
 
         private int CalculateMethodsPositionY(Class @class)
             => (1 + @class.Events.Count() + @class.Properties.Count()) * SvgClassInfo.BlockHeight + SvgClassInfo.DivisionSeparatorHeight;
 
-        private int CalculateMethodPaddingTop(int methodPositionY) => methodPositionY - PaddingTopPositionYDifference;
+        private int CalculateMethodPaddingTop(int methodPositionY) 
+            => methodPositionY - PaddingTopPositionYDifference;
 
 
     }

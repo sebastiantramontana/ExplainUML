@@ -1,9 +1,7 @@
-﻿using ExplainUml.BuildingBlocks;
-
-namespace ExplainUml.Shapes.Templates.Pieces.Services
+﻿namespace ExplainUml.Shapes.Templates.Pieces.Services
 {
     internal interface ISvgClassDrawingPieceService
     {
-        Task<string> GetDrawingContent(Class @class);
+        Task<string> GetDrawingContent(int classHeight, int blockHeight);
     }
 }

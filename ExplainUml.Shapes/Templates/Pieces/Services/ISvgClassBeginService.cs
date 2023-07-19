@@ -2,6 +2,6 @@
 {
     internal interface ISvgClassBeginService
     {
-        Task<string> GetBeginContent();
+        Task<string> GetBeginContent(int classHeight);
     }
 }

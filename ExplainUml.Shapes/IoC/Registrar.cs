@@ -31,6 +31,7 @@ namespace ExplainUml.Shapes.IoC
                 .RegisterSingleton<ISvgClassMethodsService, SvgClassMethodsService>()
                 .RegisterSingleton<ISvgClassNameService, SvgClassNameService>()
                 .RegisterSingleton<ISvgClassSeparatorService, SvgClassSeparatorService>()
+                .RegisterSingleton<ISvgClassBeginSubstituter, SvgClassBeginSubstituter>()
                 .RegisterSingleton<ISvgClassDrawingSubstituter, SvgClassDrawingSubstituter>()
                 .RegisterSingleton<ISvgClassFieldSubstituter, SvgClassFieldSubstituter>()
                 .RegisterSingleton<ISvgClassMethodSubstituter, SvgClassMethodSubstituter>()

@@ -43,9 +43,10 @@ namespace WpfApp2
 
         private async void Button_Click(object sender, RoutedEventArgs e)
         {
-            await diagram.ExecuteScriptAsync("var img = window.document.createElement('img'); " +
+            var script = "var img = window.document.createElement('img'); " +
                                                         $"img.src='{await GetImgSource()}'; " +
-                                                        "DiagramEditor.editElement(img, null, null, null, ['proto=json', 'spin=1','ui=dark','libraries=1','saveAndExit=0&noSaveBtn=0&noExitBtn=1','pv=0']);");
+                                                        $"DiagramEditor.editElement(img, null, null, null, ['proto=json', 'spin=1','ui=dark','libraries=1','saveAndExit=0&noSaveBtn=0&noExitBtn=1','pv=0']);";
+            await diagram.ExecuteScriptAsync(script);
         }
 
         private Task<string> GetImgSource()
