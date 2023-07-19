@@ -7,6 +7,40 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Templates\Pieces\Files\Class\SvgClassBegin.piece" />
+    <None Remove="Templates\Pieces\Files\Class\SvgClassDrawing.piece" />
+    <None Remove="Templates\Pieces\Files\Class\SvgClassEnd.piece" />
+    <None Remove="Templates\Pieces\Files\Class\SvgClassField.piece" />
+    <None Remove="Templates\Pieces\Files\Class\SvgClassMethod.piece" />
+    <None Remove="Templates\Pieces\Files\Class\SvgClassName.piece" />
+    <None Remove="Templates\Pieces\Files\Class\SvgClassSeparator.piece" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Templates\Pieces\Files\Class\SvgClassBegin.piece">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Templates\Pieces\Files\Class\SvgClassDrawing.piece">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Templates\Pieces\Files\Class\SvgClassEnd.piece">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Templates\Pieces\Files\Class\SvgClassField.piece">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Templates\Pieces\Files\Class\SvgClassMethod.piece">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Templates\Pieces\Files\Class\SvgClassName.piece">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Templates\Pieces\Files\Class\SvgClassSeparator.piece">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\ExplainUml.BuildingBlocks\ExplainUml.BuildingBlocks.csproj" />
     <ProjectReference Include="..\ExplainUml.Infrastructure\ExplainUml.Infrastructure.csproj" />
   </ItemGroup>

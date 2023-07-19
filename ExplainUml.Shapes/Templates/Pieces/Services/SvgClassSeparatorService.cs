@@ -6,9 +6,9 @@ namespace ExplainUml.Shapes.Templates.Pieces.Services
     internal class SvgClassSeparatorService : ISvgClassSeparatorService
     {
         private readonly ISvgClassSeparatorPieceProvider _svgClassSeparatorPieceProvider;
-        private readonly SvgClassSeparatorSubstituter _svgClassSeparatorSubstituter;
+        private readonly ISvgClassSeparatorSubstituter _svgClassSeparatorSubstituter;
 
-        public SvgClassSeparatorService(ISvgClassSeparatorPieceProvider svgClassSeparatorPieceProvider, SvgClassSeparatorSubstituter svgClassSeparatorSubstituter)
+        public SvgClassSeparatorService(ISvgClassSeparatorPieceProvider svgClassSeparatorPieceProvider, ISvgClassSeparatorSubstituter svgClassSeparatorSubstituter)
         {
             _svgClassSeparatorPieceProvider = svgClassSeparatorPieceProvider;
             _svgClassSeparatorSubstituter = svgClassSeparatorSubstituter;

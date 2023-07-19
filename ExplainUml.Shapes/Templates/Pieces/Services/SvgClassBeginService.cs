@@ -6,7 +6,7 @@ namespace ExplainUml.Shapes.Templates.Pieces.Services
     {
         private readonly ISvgClassBeginPieceProvider _svgClassBeginProvider;
 
-        internal SvgClassBeginService(ISvgClassBeginPieceProvider svgClassBeginProvider)
+        public SvgClassBeginService(ISvgClassBeginPieceProvider svgClassBeginProvider)
         {
             _svgClassBeginProvider = svgClassBeginProvider;
         }

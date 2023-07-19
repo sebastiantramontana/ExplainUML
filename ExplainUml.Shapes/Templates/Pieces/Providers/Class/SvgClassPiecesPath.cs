@@ -2,6 +2,6 @@
 {
     internal static class SvgClassPiecesPath
     {
-        internal const string Path = "ExplainUml.Shapes.Templates.Files.Class";
+        internal const string Path = "ExplainUml.Shapes.Templates.Pieces.Files.Class";
     }
 }

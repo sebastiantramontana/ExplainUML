@@ -7,8 +7,8 @@ namespace ExplainUml.Shapes.Templates.Pieces.Services
     {
         private readonly ISvgClassNamePieceProvider _svgClassNamePieceProvider;
 
-        public SvgClassNameService(ISvgClassNamePieceProvider svgClassNamePieceProvider, ISvgBlockSubstituter svgBlockSubstituter)
-            : base(svgBlockSubstituter)
+        public SvgClassNameService(ISvgClassNamePieceProvider svgClassNamePieceProvider, ISvgClassNameSubstituter svgClassNameSubstituter)
+            : base(svgClassNameSubstituter)
         {
             _svgClassNamePieceProvider = svgClassNamePieceProvider;
         }
