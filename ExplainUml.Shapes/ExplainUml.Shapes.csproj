@@ -14,6 +14,7 @@
     <None Remove="Templates\Pieces\Files\Class\SvgClassMethod.piece" />
     <None Remove="Templates\Pieces\Files\Class\SvgClassName.piece" />
     <None Remove="Templates\Pieces\Files\Class\SvgClassSeparator.piece" />
+    <None Remove="Templates\Pieces\Files\SvgMxGraphModel.piece" />
   </ItemGroup>
 
   <ItemGroup>
@@ -38,6 +39,7 @@
     <EmbeddedResource Include="Templates\Pieces\Files\Class\SvgClassSeparator.piece">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
+    <EmbeddedResource Include="Templates\Pieces\Files\MxGraphModel\SvgMxGraphModel.piece" />
   </ItemGroup>
 
   <ItemGroup>

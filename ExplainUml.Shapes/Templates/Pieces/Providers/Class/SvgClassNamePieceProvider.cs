@@ -4,8 +4,8 @@
     {
         private const string PIECE_FILE = "SvgClassName.piece";
 
-        public SvgClassNamePieceProvider(IPieceReader pieceReader)
-            : base(pieceReader, SvgClassPiecesPath.Path + "." + PIECE_FILE)
+        public SvgClassNamePieceProvider(IPieceReader pieceReader, ISvgClassPiecesPath svgClassPiecesPath)
+            : base(pieceReader, svgClassPiecesPath.GetFilePath(PIECE_FILE))
         {
         }
     }
