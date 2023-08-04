@@ -46,7 +46,7 @@ namespace ExplainUml.Shapes.Templates.Trasncluders
             var blockCount = CountBlocks(@class);
             var classHeight = CalculateClassHeight(blockCount);
 
-            stringBuilder.AppendLine(await _beginService.GetBeginContent(classHeight));
+            stringBuilder.AppendLine(await _beginService.GetPreliminaryContent(classHeight));
             stringBuilder.AppendLine(await _drawingPieceService.GetDrawingContent(classHeight, SvgClassInfo.BlockHeight));
             stringBuilder.AppendLine(await _classNameService.GetClassNameContent(@class.Name, ClassNameInitialPositionY, ClassNameInitialPaddingTop));
             stringBuilder.AppendLine(await _fieldsService.GetFieldsContent(@class.Events, @class.Properties, FieldsInitialPositionY, FieldsInitialPaddingTop));

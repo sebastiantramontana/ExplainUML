@@ -2,6 +2,6 @@
 {
     internal interface ISvgMxGraphModelSubstituter
     {
-        string Substitute(string mxGraphModelText, string Base64DeflatedSvgContent);
+        string Substitute(string mxGraphModelText, string base64DeflatedSvgContent);
     }
 }

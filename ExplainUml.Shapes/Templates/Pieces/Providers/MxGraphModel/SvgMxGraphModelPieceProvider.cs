@@ -1,6 +1,4 @@
-﻿using ExplainUml.Shapes.Templates.Pieces.Providers.Class;
-
-namespace ExplainUml.Shapes.Templates.Pieces.Providers.MxGraphModel
+﻿namespace ExplainUml.Shapes.Templates.Pieces.Providers.MxGraphModel
 {
     internal class SvgMxGraphModelPieceProvider : PieceProviderBase, ISvgMxGraphModelPieceProvider
     {

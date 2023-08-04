@@ -4,7 +4,7 @@
     {
         private const string Base64DeflatedSvgContentTemplate = "{{Base64DeflatedSvgContent}}";
 
-        public string Substitute(string mxGraphModelText, string Base64DeflatedSvgContent)
-            => mxGraphModelText.Replace(Base64DeflatedSvgContentTemplate, Base64DeflatedSvgContent, StringComparison.InvariantCulture);
+        public string Substitute(string mxGraphModelText, string base64DeflatedSvgContent)
+            => mxGraphModelText.Replace(Base64DeflatedSvgContentTemplate, base64DeflatedSvgContent, StringComparison.InvariantCulture);
     }
 }

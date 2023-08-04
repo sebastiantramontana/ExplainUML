@@ -2,6 +2,7 @@
 {
     internal interface ISvgClassBeginService
     {
-        Task<string> GetBeginContent(int classHeight);
+        Task<string> GetPreliminaryContent(int classHeight);
+        Task<string> AddContentAttribute(string svgClassContent);
     }
 }
