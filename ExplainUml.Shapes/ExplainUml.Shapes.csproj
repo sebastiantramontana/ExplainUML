@@ -39,7 +39,9 @@
     <EmbeddedResource Include="Templates\Pieces\Files\Class\SvgClassSeparator.piece">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
-    <EmbeddedResource Include="Templates\Pieces\Files\MxGraphModel\SvgMxGraphModel.piece" />
+    <EmbeddedResource Include="Templates\Pieces\Files\MxGraphModel\SvgMxGraphModel.piece">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
   </ItemGroup>
 
   <ItemGroup>

@@ -3,6 +3,6 @@
     internal interface ISvgClassBeginSubstituter
     {
         string SubstituteHeight(int classHeight, string classBeginContentTemplate);
-        string SubstituteMxGraphModel(string svgClassContent);
+        string SubstituteMxGraphModel(string base64MxGraphModelContent);
     }
 }

@@ -2,6 +2,6 @@
 {
     internal interface IDeflater
     {
-        byte[] Deflate(string content);
+        Task<byte[]> Deflate(string content);
     }
 }

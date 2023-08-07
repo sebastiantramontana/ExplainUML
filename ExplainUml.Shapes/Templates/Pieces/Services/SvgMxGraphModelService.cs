@@ -19,7 +19,8 @@ namespace ExplainUml.Shapes.Templates.Pieces.Services
         public async Task<string> GetContent(string svgContent)
         {
             var pieceContent = await _provider.GetPieceContent();
-            var base64DeflatedSvgContent = Convert.ToBase64String(_deflater.Deflate(svgContent));
+            var deflatedSvgContent = await _deflater.Deflate(svgContent);
+            var base64DeflatedSvgContent = Convert.ToBase64String(deflatedSvgContent);
 
             return _substituter.Substitute(pieceContent, base64DeflatedSvgContent);
         }

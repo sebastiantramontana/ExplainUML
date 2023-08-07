@@ -2,7 +2,7 @@
 {
     internal class SvgMxGraphModelPiecesPath : SvgPiecesPathBase, ISvgMxGraphModelPiecesPath
     {
-        private const string MxGraphModelFolder = ".MxGraphModel";
+        private const string MxGraphModelFolder = "MxGraphModel";
 
         public SvgMxGraphModelPiecesPath() : base(MxGraphModelFolder) { }
     }

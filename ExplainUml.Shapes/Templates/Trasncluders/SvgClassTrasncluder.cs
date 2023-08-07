@@ -54,7 +54,9 @@ namespace ExplainUml.Shapes.Templates.Trasncluders
             stringBuilder.AppendLine(await _methodsService.GetMethodsContent(@class.Methods, methodsPositionY, CalculateMethodPaddingTop(methodsPositionY)));
             stringBuilder.AppendLine(await _endService.GetEndContent());
 
-            return stringBuilder.ToString();
+            var svgClassPreliminaryContent = stringBuilder.ToString();
+
+            return await _beginService.AddContentAttribute(svgClassPreliminaryContent);
         }
 
         private int CountBlocks(Class @class)
@@ -69,7 +71,7 @@ namespace ExplainUml.Shapes.Templates.Trasncluders
         private int CalculateMethodsPositionY(Class @class)
             => (1 + @class.Events.Count() + @class.Properties.Count()) * SvgClassInfo.BlockHeight + SvgClassInfo.DivisionSeparatorHeight;
 
-        private int CalculateMethodPaddingTop(int methodPositionY) 
+        private int CalculateMethodPaddingTop(int methodPositionY)
             => methodPositionY - PaddingTopPositionYDifference;
 
 

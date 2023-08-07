@@ -5,15 +5,16 @@ namespace ExplainUml.Shapes.Templates.Pieces.Services
 {
     internal class Deflater : IDeflater
     {
-        public byte[] Deflate(string content)
+        public async Task<byte[]> Deflate(string content)
         {
-            var streamContent = new MemoryStream(Encoding.UTF8.GetBytes(content));
-            var zlib = new ZLibStream(streamContent, CompressionMode.Compress);
+            var inputBytes = Encoding.UTF8.GetBytes(content);
 
-            var bytes = new Span<byte>();
-            zlib.Read(bytes);
+            await using var outputStream = new MemoryStream();
+            await using var deflateStream = new ZLibStream(outputStream, CompressionMode.Compress, false);
 
-            return bytes.ToArray();
+            deflateStream.Write(inputBytes, 0, inputBytes.Length);
+
+            return outputStream.ToArray();
         }
     }
 }
