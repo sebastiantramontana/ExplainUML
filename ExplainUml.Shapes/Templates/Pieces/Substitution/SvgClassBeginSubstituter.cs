@@ -8,7 +8,7 @@
         public string SubstituteHeight(int classHeight, string classBeginContentTemplate)
             => classBeginContentTemplate.Replace(ClassHeightTemplate, classHeight.ToString(), StringComparison.InvariantCulture);
 
-        public string SubstituteMxGraphModel(string base64MxGraphModelContent)
-            => base64MxGraphModelContent.Replace(ClassMxGraphModelTemplate, base64MxGraphModelContent, StringComparison.InvariantCulture);
+        public string SubstituteMxGraphModel(string svgClassContent, string base64MxGraphModelContent)
+            => svgClassContent.Replace(ClassMxGraphModelTemplate, base64MxGraphModelContent, StringComparison.InvariantCulture);
     }
 }

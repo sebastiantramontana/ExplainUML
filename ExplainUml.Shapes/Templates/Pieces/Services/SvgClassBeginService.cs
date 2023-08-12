@@ -28,7 +28,7 @@ namespace ExplainUml.Shapes.Templates.Pieces.Services
             var mxGraphModelContent = await _svgMxGraphModelService.GetContent(svgClassContent);
             var base64MxGraphModelContent = Convert.ToBase64String(Encoding.UTF8.GetBytes(mxGraphModelContent));
 
-            return _svgClassBeginSubstituter.SubstituteMxGraphModel(base64MxGraphModelContent);
+            return _svgClassBeginSubstituter.SubstituteMxGraphModel(svgClassContent, base64MxGraphModelContent);
         }
     }
 }
