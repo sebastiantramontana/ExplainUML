@@ -7,12 +7,10 @@ namespace ExplainUml.Shapes.Templates.Pieces.Services
     {
         public async Task<byte[]> Deflate(string content)
         {
-            var inputBytes = Encoding.UTF8.GetBytes(content);
-
             await using var outputStream = new MemoryStream();
-            await using var deflateStream = new ZLibStream(outputStream, CompressionMode.Compress, false);
-
-            deflateStream.Write(inputBytes, 0, inputBytes.Length);
+            await using (var deflateStream = new ZLibStream(outputStream, CompressionMode.Compress))
+            await using (var writer = new StreamWriter(deflateStream))
+                await writer.WriteAsync(content);
 
             return outputStream.ToArray();
         }
